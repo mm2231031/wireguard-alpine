@@ -2,7 +2,7 @@
 FROM alpine:latest
 
 # 更新包列表并安装WireGuard和nftables
-RUN apk add --no-cache wireguard-tools nftables && rm -rf /var/cache/apk/*
+RUN apk add --no-cache wireguard-tools nftables dante-server && rm -rf /var/cache/apk/*
 
 # 复制启动脚本到容器
 COPY ./entrypoint.sh /entrypoint.sh

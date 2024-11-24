@@ -1,10 +1,8 @@
 #!/bin/sh
-
-# Load WireGuard configuration
-#wg-quick up wg0
-
+# Start wgcf profile
 wg-quick up wgcf-profile
 sleep 3
+# Start SOCKS5 proxy
 /usr/sbin/sockd -D -f /etc/wireguard/socks5.dante
 
 # Keep the script running to keep the container alive
